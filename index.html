@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca CEP</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+
+  <!-- FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="./assets/js/slide.js" defer></script>
+  <script src="./assets/js/search.js" defer></script>
+  
+</head>
+<body>
+  <div class="wrapper">
+    <span class="icon-close">
+      <img src="./assets/image/cross.svg" alt="">
+    </span>
+
+    <div class="form-box cep">
+      <h2>Busque por CEP</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon">
+            <img src="./assets/image/lupa.svg" alt="Imagem de uma lupa">
+          </span>
+          <input id="CEP" type="text" required>
+          <label for="">CEP</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <img src="./assets/image/rua.svg" alt="Imagem de um marcador">
+          </span>
+          <input id="street" type="text" >
+          <label for="">Endereço</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <img src="./assets/image/bairro.svg" alt="Imagem de um marcador">
+          </span>
+          <input id="neighborhood" type="text" >
+          <label for="">Bairro</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="./assets/image/cidade.svg" alt="Imagem de um marcador"></span>
+          <input id="city" type="text" >
+          <label for="">Cidade</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="./assets/image/estado.svg" alt=""></span>
+          <input id="state" type="text" >
+          <label for="">Estado</label>
+        </div>
+       
+        <button type="submit" class="btn">Buscar</button>
+        <div class="search-address">
+          <p>Não sabe o CEP?</p>
+          <a href="#">Clique aqui</a>
+        </div>
+        
+      </form>
+    </div>
+
+    <div class="form-box address">
+      <h2>Busque por Endereço</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon">
+            <img src="./assets/image/lupa.svg" alt="Imagem de uma lupa">
+          </span>
+          <input type="text" required>
+          <label for="">Endereço</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <img src="./assets/image/rua.svg" alt="Imagem de um marcador">
+          </span>
+          <input type="text" required>
+          <label for="">CEP</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <img src="./assets/image/bairro.svg" alt="Imagem de um marcador">
+          </span>
+          <input type="text" required>
+          <label for="">Bairro</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="./assets/image/cidade.svg" alt="Imagem de um marcador"></span>
+          <input type="text" required>
+          <label for="">Cidade</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><img src="./assets/image/estado.svg" alt=""></span>
+          <input type="text" required>
+          <label for="">Estado</label>
+        </div>
+       
+        <button type="submit" class="btn">Buscar</button>
+        <div class="search-cep">
+          <p>Não sabe o endereço?</p>
+          <a href="#">Clique aqui</a>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</body>
+</html>
