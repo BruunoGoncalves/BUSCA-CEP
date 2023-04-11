@@ -1,18 +1,34 @@
+async function buscaCep(){
+  let cep = document.getElementById('CEP').value;
+  if(cep !== "") {
+    let url = `https://brasilapi.com.br/api/cep/v2/${cep}`;
 
+    try {
+      let response = await fetch(url);
+      let endereco = await response.json();
+      if(response.status === 200) {
+        document.getElementById('street').value = endereco.street;
+        document.getElementById('neighborhood').value = endereco.neighborhood;
+        document.getElementById('city').value = endereco.city;
+        document.getElementById('state').value = endereco.state;
 
-async function searchCep() {
-  const cepInput = document.querySelector('#CEP').value;
-  const response = await fetch(`https://brasilapi.com.br/api/cep/v2/${cepInput}`);
-  const json = await response.json();
-
-  if (cepInput.length != 8) {
-    alert('CEP inválido!');
-  } else {
-    document.querySelector('#street').value = json.street;
-    document.querySelector('#neighborhood').value = json.neighborhood;
-    document.querySelector('#city').value = json.city;
-    document.querySelector('#state').value = json.state;
+        // Define os campos do resultado com pointer-events: none
+        document.getElementById('street').style.pointerEvents = 'none';
+        document.getElementById('neighborhood').style.pointerEvents = 'none';
+        document.getElementById('city').style.pointerEvents = 'none';
+        document.getElementById('state').style.pointerEvents = 'none';
+      } else if (response.status === 404) {
+        alert("CEP não encontrado!");
+      } else {
+        alert('Erro ao fazer a requisição!');
+      }
+    } catch(error) {
+      alert('Erro ao fazer a requisição!');
+    }
   }
 }
 
-document.querySelector('.btn').addEventListener('click', searchCep);
+window.onload = function() {
+  let txtCep = document.getElementById('CEP');
+  txtCep.addEventListener('blur', buscaCep);
+}
